@@ -14,6 +14,7 @@ export default function orderByProps(obj, order) {
   // const propsAlpabetOrder = [];
   // for (const prop in obj) {
   //   if (!(order && order.includes(prop))) {
+  //     // Эту проверку требует eslint
   //     if (Object.prototype.hasOwnProperty.call(obj, prop)) {
   //       propsAlpabetOrder.push({
   //         key: prop,
@@ -35,6 +36,14 @@ export default function orderByProps(obj, order) {
       key: elem[0],
       value: elem[1],
     }));
+  // Комментарии оставлены как вопрос в правильности понимания мной
+  // поставленной задачи и уточнения какой же вариант решения
+  // более правильный и наглядный.
+  // для меня первый вариант изначально казался наглядней
+  // но не смогла в нем подружить eslint и jest.
+  // Можно было бы в настройках eslint отключить необходимость
+  // проверки собственных свойств, но, предпологаю, что она необходима
+  // Если второй вариант подходит, то для зачета удалю комментарии.
 
   return [...propsWithOrder, ...propsAlpabetOrder];
 }

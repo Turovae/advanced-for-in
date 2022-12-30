@@ -47,11 +47,3 @@ test('test orderByProps with order argument ["name", "type"]', () => {
     { key: 'level', value: 2 },
   ]);
 });
-
-// Поскольку eslint очень сильно требовал проверку
-// на собственное свойство
-// if (Object.prototype.hasOwnProperty.call(obj, prop))
-// для конструкции for in,
-// для полного покрытия тестами пришлось добавить
-// Но не могу придумать тест, чтобы покрывать
-// это условие
